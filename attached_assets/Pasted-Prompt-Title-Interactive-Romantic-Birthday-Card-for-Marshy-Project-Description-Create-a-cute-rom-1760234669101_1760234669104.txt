@@ -1,0 +1,117 @@
+Prompt Title: Interactive Romantic Birthday Card for Marshy
+
+Project Description:
+Create a cute, romantic, interactive birthday webpage for someone named Marshy. The entire experience should feel soft, loving, and playful, with a pink aesthetic, gentle floating hearts, and smooth page transitions. The page should feature animated gifs, interactive buttons, and poetic text across multiple screens that flow like a story.
+
+Page Structure and Flow
+Page 1 – Welcome Page
+
+Background: Soft pink or pastel gradient.
+
+At the top: A cute dancing cat GIF.
+
+Below it: Big friendly text — “Hello Marshy”.
+
+Underneath: Smaller text — “Do you want to see your gift?”
+
+Two buttons:
+
+“Yes please” → proceeds to Page 2.
+
+“No thanks” → leads to a mini “sad cat” scene.
+
+If “No thanks” is chosen:
+
+Show a small sobbing cat GIF.
+
+Text below: “I promise you’ll like it 🥺.”
+
+A single button: “Try again”, which leads back to the question.
+
+When the correct answer is chosen (“Yes please”), the transition to the next page should be a soft fade-in.
+
+Page 2 – Memories Page
+
+Background: Gentle pink with floating hearts.
+
+Display: A few pictures of Marshy (placeholder images) with short, sweet poems beside them.
+
+Add a Next button at the bottom that transitions smoothly to Page 3.
+
+Page 3 – Birthday Poem Page
+
+Background: Same soft aesthetic with heart sparkles.
+
+Center: A heart bear GIF.
+
+Below: A romantic birthday poem (custom text placeholder).
+
+At the bottom: A “Thank you” button.
+
+Page 4 – Reaction Page
+
+Triggered after “Thank you” button.
+
+Show a cute cat GIF on top.
+
+Text: “Did you like it?”
+
+Two options:
+
+“Yes I did”
+
+“No I didn’t”
+
+Fun interaction:
+If she clicks “No I didn’t”, the “Yes I did” button gradually gets bigger, while the “No I didn’t” button shrinks and eventually disappears, leaving only “Yes I did.”
+Once “Yes I did” is clicked, proceed to the next page.
+
+Page 5 – Sweet Surprise Page
+
+A blushing bear GIF on top.
+
+Text: “Thank you for liking it 💕 But one more thing…”
+
+Button: Next → transitions to final page.
+
+Page 6 – The Question Page
+
+Background: Romantic pink glow or animated floating hearts.
+
+Text: “Would you be mine?”
+
+Two buttons:
+
+“Yes, I do”
+
+“No, I don’t”
+
+Playful interaction:
+When hovering or trying to click on “No, I don’t”, it moves around or dodges the cursor playfully.
+When she finally clicks “Yes, I do”, display the final scene.
+
+Final Scene – Happy Ending
+
+Background: Soft pink with sparkles or floating hearts.
+
+Kissing bear GIF in the center.
+
+Big text below: “Thank you 💖”
+
+Optionally: Add background music or subtle heart bubble animations.
+
+Design Notes
+
+General theme: Romantic, playful, soft, and interactive.
+
+Animation style: GSAP or CSS animations (smooth transitions, floating hearts, bubble effects).
+
+Gifs can be placeholders for now — I’ll add my own later.
+
+All text should use cute handwriting or script fonts.
+
+Keep all assets lightweight for smooth performance.
+
+Purpose
+
+This project is meant to be a romantic birthday surprise webpage and a cute way to ask Marshy out — something that feels personal, adorable, and emotionally warm.
