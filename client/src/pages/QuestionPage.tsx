@@ -26,7 +26,7 @@ export default function QuestionPage({ onYes }: QuestionPageProps) {
             Yes, I would
           </Button>
           <DodgingButton>
-            No, I don't
+            No, I won't
           </DodgingButton>
         </div>
       </div>
