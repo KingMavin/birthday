@@ -31,7 +31,7 @@ export default function DodgingButton({ children }: DodgingButtonProps) {
       }}
       data-testid="button-dodging"
     >
-      {children}
+      No, I won't
     </Button>
   );
 }
