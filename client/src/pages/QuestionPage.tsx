@@ -23,7 +23,7 @@ export default function QuestionPage({ onYes }: QuestionPageProps) {
             onClick={onYes}
             data-testid="button-yes-i-do"
           >
-            Yes, I do
+            Yes, I would
           </Button>
           <DodgingButton>
             No, I don't
