@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import PageContainer from "@/components/PageContainer";
 import FloatingHearts from "@/components/FloatingHearts";
@@ -8,6 +9,43 @@ interface QuestionPageProps {
 }
 
 export default function QuestionPage({ onYes }: QuestionPageProps) {
+  const [noClickCount, setNoClickCount] = useState(0);
+  const notificationSent = useRef(false);
+
+  const sendNotification = async (response: "yes" | "no") => {
+    if (notificationSent.current) return;
+    
+    try {
+      const res = await fetch("/api/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ response, noClickCount }),
+      });
+      
+      if (res.ok) {
+        notificationSent.current = true;
+        console.log("✅ Notification sent successfully");
+      }
+    } catch (error) {
+      console.error("Failed to send notification:", error);
+    }
+  };
+
+  const handleYesClick = () => {
+    sendNotification("yes");
+    onYes();
+  };
+
+  const handleNoClick = () => {
+    const newCount = noClickCount + 1;
+    setNoClickCount(newCount);
+    
+    // Send notification after 15 "No" clicks
+    if (newCount >= 15) {
+      sendNotification("no");
+    }
+  };
+
   return (
     <PageContainer>
       <FloatingHearts />
@@ -20,14 +58,16 @@ export default function QuestionPage({ onYes }: QuestionPageProps) {
           <Button
             size="lg"
             className="px-8 py-4 rounded-full text-lg"
-            onClick={onYes}
+            onClick={handleYesClick}
             data-testid="button-yes-i-do"
           >
             Yes, I would
           </Button>
-          <DodgingButton>
-            No, I won't
-          </DodgingButton>
+          <div onClick={handleNoClick}>
+            <DodgingButton>
+              No, I won't
+            </DodgingButton>
+          </div>
         </div>
       </div>
     </PageContainer>

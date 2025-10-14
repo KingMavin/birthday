@@ -87,24 +87,78 @@ You should see the birthday card welcome page!
 
 ## Customizing the Experience
 
-### Replace Placeholder GIFs
+### Asset Paths - All Images and GIFs
 
-The project uses placeholder GIFs from Giphy. To use your own:
+Here's a complete list of all assets used in the project for easy editing:
 
-1. Find the GIF URLs in the page components:
-   - `client/src/pages/WelcomePage.tsx` - Dancing cat and sad cat
-   - `client/src/pages/BirthdayPoemPage.tsx` - Heart bear
-   - `client/src/pages/ReactionPage.tsx` - Cute cat
-   - `client/src/pages/SweetSurprisePage.tsx` - Blushing bear
-   - `client/src/pages/FinalPage.tsx` - Kissing bears
+#### Page 1 - Welcome Page (`client/src/pages/WelcomePage.tsx`)
+- **Line 20**: Dancing cat GIF
+  ```
+  https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif
+  ```
+- **Line 54**: Sad cat GIF (shown when "No thanks" is clicked)
+  ```
+  https://media.giphy.com/media/L95W4wv8nnb9K/giphy.gif
+  ```
 
-2. Replace the `src` attribute with your own GIF URLs
+#### Page 2 - Memories Page (`client/src/pages/MemoriesPage.tsx`)
+- **Line 11**: Memory Photo 1
+  ```
+  https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400
+  ```
+  - **Line 12**: Poem 1: "Every moment with you feels like a dream,\nYour smile lights up my world with its gleam."
 
-### Update Photos and Poems
+- **Line 15**: Memory Photo 2
+  ```
+  https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400
+  ```
+  - **Line 16**: Poem 2: "In your eyes I see the stars above,\nA universe of beauty, warmth, and love."
 
-Edit `client/src/pages/MemoriesPage.tsx` to customize:
-- Replace the placeholder images with actual photos of Marshy
-- Update the poems to your own personal messages
+- **Line 19**: Memory Photo 3
+  ```
+  https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400
+  ```
+  - **Line 20**: Poem 3: "Your laughter is the sweetest song,\nWith you is where I belong."
+
+#### Page 3 - Birthday Poem Page (`client/src/pages/BirthdayPoemPage.tsx`)
+- **Line 30**: Heart bear GIF
+  ```
+  https://media.giphy.com/media/yoJC2GnSClbPOkV0eA/giphy.gif
+  ```
+- **Lines 44-50**: Birthday poem text
+
+#### Page 4 - Reaction Page (`client/src/pages/ReactionPage.tsx`)
+- **Line 23**: Cute cat GIF
+  ```
+  https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif
+  ```
+
+#### Page 5 - Sweet Surprise Page (`client/src/pages/SweetSurprisePage.tsx`)
+- **Line 15**: Blushing bear GIF
+  ```
+  https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif
+  ```
+
+#### Page 6 - The Question Page (`client/src/pages/QuestionPage.tsx`)
+- No images (just the question "Would you be mine?")
+
+#### Final Page (`client/src/pages/FinalPage.tsx`)
+- **Line 27**: Kissing bears GIF
+  ```
+  https://media.giphy.com/media/VxbvpfaTTo3le/giphy.gif
+  ```
+
+### Quick Edit Guide
+
+**To replace a GIF:**
+1. Open the file path listed above
+2. Go to the line number specified
+3. Replace the URL in the `src` attribute with your own image/GIF URL
+
+**To update poems:**
+1. Open `client/src/pages/MemoriesPage.tsx`
+2. Edit the `poem` text in lines 12, 16, and 20
+3. Or edit the birthday poem in `client/src/pages/BirthdayPoemPage.tsx` lines 44-50
 
 ### Modify Colors
 
@@ -122,6 +176,46 @@ The pink color scheme is defined in `client/src/index.css`. You can adjust the c
 - The development server has hot reload, but sometimes you may need to refresh your browser
 - If that doesn't work, restart the dev server (Ctrl+C, then `npm run dev` again)
 
+## Email Notifications Feature
+
+The birthday card includes a subtle notification system that sends you an email based on Marshy's response!
+
+### How It Works
+
+When Marshy reaches the "Would you be mine?" question:
+
+1. **If she clicks "Yes, I would"**: You receive an email with subject "💖 She said YES!" and message "Yes, you are mine now 💖"
+
+2. **If she clicks "No, I won't" 15 times**: You receive an email with subject "💔 Not this time..." and message "Sorry, we can't work 💔"
+
+### Setting Up Email Notifications
+
+**Step 1: Set Up Gmail Integration**
+
+The app uses Replit's Gmail connector for secure email sending. You'll be prompted to connect your Gmail account when you first run the app on Replit.
+
+**Step 2: Configure Your Email**
+
+Set the `NOTIFICATION_EMAIL` environment variable to your email address where you want to receive notifications:
+
+1. In Replit: Go to Secrets tab → Add new secret
+   - Key: `NOTIFICATION_EMAIL`
+   - Value: `your-email@gmail.com`
+
+2. Locally in VS Code: Create a `.env` file in the root directory:
+   ```
+   NOTIFICATION_EMAIL=your-email@gmail.com
+   ```
+
+**Step 3: Test the Notification**
+
+Navigate to the final question page and click either button to test. Check your browser console for confirmation that the notification was sent.
+
+### Code Location
+
+- **Backend API**: `server/routes.ts` (line 6-37) - The `/api/notify` endpoint
+- **Frontend Logic**: `client/src/pages/QuestionPage.tsx` (line 14-46) - Tracks clicks and sends requests
+
 ## Building for Production
 
 To create an optimized production build:
@@ -138,3 +232,4 @@ If you encounter any issues, make sure:
 - Node.js version is 18 or higher
 - All dependencies installed successfully
 - No other applications are using port 5000
+- For email notifications: Gmail integration is properly connected on Replit

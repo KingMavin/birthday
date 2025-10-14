@@ -3,11 +3,39 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // put application routes here
-  // prefix all routes with /api
+  // Email notification endpoint for the "Would you be mine?" question
+  app.post("/api/notify", async (req, res) => {
+    try {
+      const { response, noClickCount } = req.body;
+      
+      if (!response) {
+        return res.status(400).json({ error: "Response is required" });
+      }
 
-  // use storage to perform CRUD operations on the storage interface
-  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
+      // This will be replaced with Gmail integration
+      const emailConfig = {
+        to: process.env.NOTIFICATION_EMAIL || "your-email@gmail.com",
+        subject: response === "yes" ? "💖 She said YES!" : "💔 Not this time...",
+        message: response === "yes" 
+          ? "Yes, you are mine now 💖"
+          : `Sorry, we can't work 💔 (She clicked "No" ${noClickCount} times)`,
+      };
+
+      console.log("📧 Email notification would be sent:", emailConfig);
+      
+      // TODO: Replace with actual Gmail API call using the Gmail connector
+      // For now, just log it and return success
+      
+      res.json({ 
+        success: true, 
+        message: "Notification logged (email integration pending setup)",
+        emailConfig 
+      });
+    } catch (error) {
+      console.error("Error sending notification:", error);
+      res.status(500).json({ error: "Failed to send notification" });
+    }
+  });
 
   const httpServer = createServer(app);
 
