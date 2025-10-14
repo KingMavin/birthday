@@ -12,9 +12,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Response is required" });
       }
 
-      // This will be replaced with Gmail integration
+      // Email notification configuration
       const emailConfig = {
-        to: process.env.NOTIFICATION_EMAIL || "your-email@gmail.com",
+        to: process.env.NOTIFICATION_EMAIL || "amiazreal@gmail.com",
         subject: response === "yes" ? "💖 She said YES!" : "💔 Not this time...",
         message: response === "yes" 
           ? "Yes, you are mine now 💖"
@@ -23,8 +23,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       console.log("📧 Email notification would be sent:", emailConfig);
       
-      // TODO: Replace with actual Gmail API call using the Gmail connector
-      // For now, just log it and return success
+      // TODO: When hosting elsewhere, add your email service provider here
+      // Example services: Nodemailer with Gmail, SendGrid, Resend, etc.
+      // For now, notifications are logged to console
       
       res.json({ 
         success: true, 

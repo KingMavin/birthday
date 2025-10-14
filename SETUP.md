@@ -190,26 +190,54 @@ When Marshy reaches the "Would you be mine?" question:
 
 ### Setting Up Email Notifications
 
-**Step 1: Set Up Gmail Integration**
+**Default Recipient**: Notifications are configured to send to `amiazreal@gmail.com`
 
-The app uses Replit's Gmail connector for secure email sending. You'll be prompted to connect your Gmail account when you first run the app on Replit.
+**Current Status**: The notification system is currently **logging to console only**. To enable actual email sending when you host this app elsewhere, you'll need to add an email service provider.
 
-**Step 2: Configure Your Email**
+**For Deployment (Hosting Elsewhere)**
 
-Set the `NOTIFICATION_EMAIL` environment variable to your email address where you want to receive notifications:
+When you deploy this app to another hosting platform (Vercel, Netlify, your own server, etc.), you'll need to configure an email service. Here are popular options:
 
-1. In Replit: Go to Secrets tab → Add new secret
-   - Key: `NOTIFICATION_EMAIL`
-   - Value: `your-email@gmail.com`
+**Option 1: Nodemailer with Gmail App Password** (Recommended for Gmail)
+```bash
+npm install nodemailer
+```
 
-2. Locally in VS Code: Create a `.env` file in the root directory:
-   ```
-   NOTIFICATION_EMAIL=your-email@gmail.com
-   ```
+Then in `server/routes.ts`, replace the TODO section with:
+```javascript
+const nodemailer = require('nodemailer');
 
-**Step 3: Test the Notification**
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER, // Your gmail address
+    pass: process.env.GMAIL_APP_PASSWORD // App-specific password from Google
+  }
+});
 
-Navigate to the final question page and click either button to test. Check your browser console for confirmation that the notification was sent.
+await transporter.sendMail({
+  from: process.env.GMAIL_USER,
+  to: emailConfig.to,
+  subject: emailConfig.subject,
+  text: emailConfig.message
+});
+```
+
+**Option 2: SendGrid** (Easier for production)
+```bash
+npm install @sendgrid/mail
+```
+
+**Option 3: Resend** (Modern, simple API)
+```bash
+npm install resend
+```
+
+**Environment Variables Needed** (when deploying):
+- `NOTIFICATION_EMAIL`: Where to send notifications (default: amiazreal@gmail.com)
+- Email service credentials (varies by provider)
+
+**For Testing Locally**: The app will log notification details to the console so you can see when they would be triggered.
 
 ### Code Location
 
