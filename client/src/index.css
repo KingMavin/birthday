@@ -207,11 +207,19 @@
 
 @layer base {
   * {
-    @apply border-border;
+    /* Apply the project border variable directly to avoid relying on a generated
+       Tailwind utility that may not be present in some build setups. */
+    border-color: hsl(var(--border) / 1);
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    /* Avoid @apply for core project variables to sidestep Tailwind generation
+       mismatches during build. Use the CSS variables defined above. */
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: hsl(var(--background) / 1);
+    color: hsl(var(--foreground) / 1);
   }
 }
 
@@ -219,7 +227,8 @@
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */
   input[type="search"]::-webkit-search-cancel-button {
-    @apply hidden;
+    /* hide the native cancel button */
+    display: none;
   }
 
   /* Placeholder styling for contentEditable div */

@@ -8,15 +8,15 @@ interface MemoriesPageProps {
 
 const memories = [
   {
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+    image: "/images/pho1.jpg",
     poem: "Every moment with you feels like a dream,\nYour smile lights up my world with its gleam.",
   },
   {
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+    image: "/images/pho2.jpg",
     poem: "In your eyes I see the stars above,\nA universe of beauty, warmth, and love.",
   },
   {
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400",
+    image: "/images/pho3.jpg",
     poem: "Your laughter is the sweetest song,\nWith you is where I belong.",
   },
 ];
