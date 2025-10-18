@@ -33,13 +33,13 @@ export default function MemoriesPage({ onNext }: MemoriesPageProps) {
           {memories.map((memory, index) => (
             <div
               key={index}
-              className="flex flex-col md:flex-row gap-6 items-center"
+              className="flex flex-col md:flex-row gap-6 items-center md:items-start"
               data-testid={`memory-${index}`}
             >
               <img
                 src={memory.image}
                 alt={`Memory ${index + 1}`}
-                className="w-full md:w-64 h-64 object-cover rounded-2xl"
+                className="w-full md:w-[268px] h-auto md:h-[224px] object-cover rounded-2xl flex-none"
                 data-testid={`img-memory-${index}`}
               />
               <p

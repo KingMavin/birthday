@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind directives commented out to avoid "Unknown at rule @tailwind" errors
+   in editors/linters that don't run PostCSS/Tailwind. Re-enable these lines
+   (remove the comments) when using Tailwind's build pipeline (postcss/tailwindcss). */
+
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
 
 /* LIGHT MODE */
 :root {
@@ -238,10 +242,6 @@
     pointer-events: none;
   }
 
-  .no-default-hover-elevate {}
-
-  .no-default-active-elevate {}
-
   .toggle-elevate::before,
   .toggle-elevate-2::before {
     content: "";
@@ -297,4 +297,27 @@
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
     inset: -1px;
   }
+}
+
+/* Fallback animation definitions for environments where Tailwind didn't
+   generate custom animation utilities (ensures animations work after build).
+   These mirror the animations defined in tailwind.config.ts. */
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+}
+
+.animate-pulse-heart {
+  animation: pulse-heart 1.5s ease-in-out infinite;
+}
+
+.animate-float-up {
+  animation: float-up 8s linear infinite;
 }
