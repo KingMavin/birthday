@@ -17,7 +17,7 @@ export default function WelcomePage({ onContinue }: WelcomePageProps) {
         {!showSadCat ? (
           <>
             <img
-              src="https://giphy.com/gifs/happy-birthday-poku-meow-6WFScxN6fi95z3YVQD"
+              src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG5vN29kNHVvYmUyZnI3N2k4YTFudW90djdma3h2M25mczUwajFvcSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bcKmIWkUMCjVm/giphy.gif"
               alt="Dancing cat"
               className="w-48 h-48 mx-auto rounded-2xl object-cover"
               data-testid="img-dancing-cat"
