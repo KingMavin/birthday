@@ -17,7 +17,7 @@ interface MemoriesPageProps {
 
 const memories = [
   {
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+    image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzdkbjRqZHVyZjRrMmhhdzB2bnBrcHdkcnUyZWdkc2Rrdzkwd2w4biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l4Ki4biBSwhjyrS48/giphy.gif",
     poem: "Every moment with you feels like a dream,\nYour smile lights up my world with its gleam.",
   },
   {
