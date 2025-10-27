@@ -21,7 +21,7 @@ const memories = [
     poem: "Every moment with you feels like a dream,\nYour smile lights up my world with its gleam.",
   },
   {
-    image: "MarshyVerse\client\src\pages\jiu.jpg",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
     poem: "In your eyes I see the stars above,\nA universe of beauty, warmth, and love.",
   },
   {
