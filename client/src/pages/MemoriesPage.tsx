@@ -21,12 +21,16 @@ const memories = [
     poem: "Every moment with you feels like a dream,\nYour smile lights up my world with its gleam.",
   },
   {
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+    image: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW80cTNzb3Y1cWUzdmIxMnRzMnA0eXEyZGd1b3l5c21zMjB5b2MyMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H0tF6mNgMxdMqUrOTA/giphy.gif",
     poem: "In your eyes I see the stars above,\nA universe of beauty, warmth, and love.",
   },
   {
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400",
+    image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzY3d294MGN4aGV5NTVwczEwMXlqajg4YzdyeHI3cW5waHBhMnlhaCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Z7hAjvqppsuVG/giphy.gif",
     poem: "Your laughter is the sweetest song,\nWith you is where I belong.",
+  },
+   {
+    image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODhyYW5udGVodHo4aTZka2ljdTZ1YXI5YnZiNngwaTlleXdwMmZ4dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nRNF5nlDgr8bK/giphy.gif",
+    poem: "In your eyes I see the stars above,\nA universe of beauty, warmth, and love.",
   },
 ];
 
