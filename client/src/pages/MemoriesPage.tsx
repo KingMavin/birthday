@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import PageContainer from "@/components/PageContainer";
 import FloatingHearts from "@/components/FloatingHearts";
+import { useScrollFadeInOut } from "@/hooks/useScrollFadeInOut";
 
 declare global {
   namespace JSX {
@@ -39,31 +40,44 @@ export default function MemoriesPage({ onNext }: MemoriesPageProps) {
     <PageContainer>
       <FloatingHearts />
       <div className="max-w-4xl mx-auto space-y-12 relative z-10">
-        <h2 className="text-5xl font-bold text-center text-foreground" data-testid="text-memories-title">
+        <h2 
+          ref={useScrollFadeInOut<HTMLHeadingElement>({ threshold: 0.5, duration: 0.8 })}
+          className="text-5xl font-bold text-center text-foreground" 
+          data-testid="text-memories-title"
+        >
           Beautiful Memories
         </h2>
         <div className="space-y-8">
-          {memories.map((memory, index) => (
-            <div
-              key={index}
-              className="flex flex-col md:flex-row gap-6 items-center"
-              data-testid={`memory-${index}`}
-            >
-              <img
-                src={memory.image}
-                alt={`Memory ${index + 1}`}
-                className="w-full md:w-64 h-64 object-cover rounded-2xl"
-                data-testid={`img-memory-${index}`}
-              />
-              <p
-                className="text-xl text-foreground leading-relaxed flex-1 text-center md:text-left"
-                style={{ lineHeight: 1.8 }}
-                data-testid={`text-poem-${index}`}
+          {memories.map((memory, index) => {
+            const fadeRef = useScrollFadeInOut<HTMLDivElement>({
+              threshold: 0.2,
+              duration: 0.8,
+              delay: index * 0.2, // Stagger the animations
+            });
+
+            return (
+              <div
+                key={index}
+                ref={fadeRef}
+                className="flex flex-col md:flex-row gap-6 items-center"
+                data-testid={`memory-${index}`}
               >
-                {memory.poem}
-              </p>
-            </div>
-          ))}
+                <img
+                  src={memory.image}
+                  alt={`Memory ${index + 1}`}
+                  className="w-full md:w-64 h-64 object-cover rounded-2xl"
+                  data-testid={`img-memory-${index}`}
+                />
+                <p
+                  className="text-xl text-foreground leading-relaxed flex-1 text-center md:text-left"
+                  style={{ lineHeight: 1.8 }}
+                  data-testid={`text-poem-${index}`}
+                >
+                  {memory.poem}
+                </p>
+              </div>
+            );
+          })}
         </div>
         <div className="text-center pt-8">
           <Button
