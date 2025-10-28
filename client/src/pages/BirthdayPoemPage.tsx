@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import PageContainer from "@/components/PageContainer";
 import FloatingHearts from "@/components/FloatingHearts";
 import { Sparkles } from "lucide-react";
+import Typewriter from "@/components/Typewriter";
 
 interface BirthdayPoemPageProps {
   onNext: () => void;
@@ -37,17 +38,22 @@ export default function BirthdayPoemPage({ onNext }: BirthdayPoemPageProps) {
             Happy Birthday, Marshy
           </h2>
           <p
-            className="text-2xl text-foreground leading-relaxed"
+            className="text-2xl text-foreground leading-relaxed min-h-[16rem]"
             style={{ lineHeight: 2 }}
             data-testid="text-birthday-poem"
           >
-            On this special day, I want you to know,<br />
-            How much my love for you continues to grow.<br />
-            You're the sweetest soul I've ever met,<br />
-            A birthday I'll never forget.<br />
-            <br />
-            May your day be filled with love and cheer,<br />
-            And may happiness follow you throughout the year.
+            <Typewriter
+              text={`On this special day, I want you to know,
+How much my love for you continues to grow.
+You're the sweetest soul I've ever met,
+A birthday I'll never forget.
+
+May your day be filled with love and cheer,
+And may happiness follow you throughout the year.`}
+              speed={50}
+              startDelay={500}
+              showCursor={true}
+            />
           </p>
         </div>
         <Button

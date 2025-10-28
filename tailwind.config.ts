@@ -88,6 +88,10 @@ export default {
         mono: ["var(--font-mono)"],
       },
       keyframes: {
+        "cursor-blink": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" }
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -116,6 +120,7 @@ export default {
         },
       },
       animation: {
+        "cursor-blink": "cursor-blink 1s ease-in-out infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float-up": "float-up 8s linear infinite",
