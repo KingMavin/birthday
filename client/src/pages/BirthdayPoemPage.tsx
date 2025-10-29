@@ -58,9 +58,9 @@ in love and passion for God,
 in purpose that grows stronger,
 in futures worth building, brick by hopeful brick.
 
-You're got me chasing goals that lead to you,
+You've got me chasing goals that i want to lead to you,
 working harder, dreaming louder,
-becoming more of the man you already see in me.
+becoming more of the man i didn't know i could be.
 
 So here's to you,
 to your softness, your fire,

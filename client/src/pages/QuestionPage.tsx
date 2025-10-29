@@ -65,7 +65,7 @@ export default function QuestionPage({ onYes }: QuestionPageProps) {
           </Button>
           <div onClick={handleNoClick}>
             <DodgingButton>
-              Maybe, blehh no...
+              Maybe,bleh
             </DodgingButton>
           </div>
         </div>

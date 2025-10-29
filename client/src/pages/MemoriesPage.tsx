@@ -23,7 +23,7 @@ const memories = [
   },
   {
     image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODhyYW5udGVodHo4aTZka2ljdTZ1YXI5YnZiNngwaTlleXdwMmZ4dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nRNF5nlDgr8bK/giphy.gif",
-    poem: "It wasn't one big moment, just quiet ones that built up,\nA laugh here, a gaze there...\nand suddenly, i was gone\nhopelessly, beautifully fallen and gone",
+    poem: "U fell, It wasn't one big moment, just quiet ones that built up,\nA laugh here, a gaze there...\nand suddenly, i was gone\nhopelessly, beautifully fallen and gone",
   },
   {
     image: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW80cTNzb3Y1cWUzdmIxMnRzMnA0eXEyZGd1b3l5c21zMjB5b2MyMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H0tF6mNgMxdMqUrOTA/giphy.gif",
@@ -31,7 +31,7 @@ const memories = [
   },
   {
     image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzY3d294MGN4aGV5NTVwczEwMXlqajg4YzdyeHI3cW5waHBhMnlhaCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Z7hAjvqppsuVG/giphy.gif",
-    poem: "I don't know what kind of spell you cast,\nbut im chasing goals like they lead straight to you. \nYou made me want more out of life than i ever thought possible.",
+    poem: "I don't know what kind of spell you cast,\nbut im chasing dreams that lead straight to you. \nYou made me want more out of life than i ever thought possible.",
   },
 ];
 
