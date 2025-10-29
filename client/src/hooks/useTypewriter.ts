@@ -15,7 +15,7 @@ export function useTypewriter({
   const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: ReturnType<typeof setInterval> | undefined;
     let currentIndex = 0;
 
     // Reset state when text prop changes
@@ -39,8 +39,8 @@ export function useTypewriter({
     const delayTimeout = setTimeout(startTyping, startDelay);
 
     return () => {
-      clearTimeout(delayTimeout);
-      clearInterval(timeoutId);
+      clearTimeout(delayTimeout as unknown as number);
+      if (timeoutId !== undefined) clearInterval(timeoutId as unknown as number);
     };
   }, [text, speed, startDelay]);
 

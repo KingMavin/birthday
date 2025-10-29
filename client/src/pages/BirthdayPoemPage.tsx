@@ -43,13 +43,33 @@ export default function BirthdayPoemPage({ onNext }: BirthdayPoemPageProps) {
             data-testid="text-birthday-poem"
           >
             <Typewriter
-              text={`On this special day, I want you to know,
-How much my love for you continues to grow.
-You're the sweetest soul I've ever met,
-A birthday I'll never forget.
+              text={`Happy Birthday, my sweetest chaos,
+the calm in my storm, the melody in my noise.
+You walk into days and make them softer,
+turning ordinary moments into quiet joy.
 
-May your day be filled with love and cheer,
-And may happiness follow you throughout the year.`}
+You're laughter wrapped in light,
+a heart that hums peace even when tired.
+You love like prayer, gentle, steady, real,
+and somehow, you brought God closer too.
+
+You made me believe in better things:
+in love and passion for God,
+in purpose that grows stronger,
+in futures worth building, brick by hopeful brick.
+
+You're got me chasing goals that lead to you,
+working harder, dreaming louder,
+becoming more of the man you already see in me.
+
+So here's to you,
+to your softness, your fire,
+your sugar-fueled chaos and that proud little grin.
+You're my favorite kind of miracle,
+the one that feels new everyday.
+
+May your days be filled with love and cheer,
+And may happiness follow you throughout the years.`}
               speed={50}
               startDelay={500}
               showCursor={true}

@@ -22,6 +22,16 @@ export function useScrollFadeInOut<T extends HTMLElement = HTMLElement>({
     // Set initial opacity to 0
     element.style.opacity = '0';
     element.style.transition = `opacity ${duration}s ease-out ${delay}s`;
+    // Hint for browser to optimize opacity transitions
+    element.style.willChange = 'opacity';
+
+    // Respect reduced motion preference
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      element.style.transition = 'none';
+      element.style.opacity = '1';
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,7 +54,19 @@ export function useScrollFadeInOut<T extends HTMLElement = HTMLElement>({
     observer.observe(element);
 
     return () => {
-      observer.unobserve(element);
+      // Disconnect the observer to avoid errors if the element was removed
+      try {
+        observer.disconnect();
+      } catch (e) {
+        // ignore
+      }
+      // Clean up inline styles we added (optional)
+      try {
+        element.style.transition = '';
+        element.style.willChange = '';
+      } catch (e) {
+        /* ignore */
+      }
     };
   }, [threshold, rootMargin, duration, delay]);
 

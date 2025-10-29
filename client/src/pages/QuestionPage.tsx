@@ -52,7 +52,7 @@ export default function QuestionPage({ onYes }: QuestionPageProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 pointer-events-none" />
       <div className="max-w-2xl mx-auto text-center space-y-12 relative z-10">
         <h2 className="text-5xl font-bold text-foreground animate-pulse-heart" data-testid="text-question">
-          Would you be mine?
+          May i be your 1 Corinthians 13:4–7??
         </h2>
         <div className="flex gap-6 justify-center items-center flex-wrap">
           <Button
@@ -61,11 +61,11 @@ export default function QuestionPage({ onYes }: QuestionPageProps) {
             onClick={handleYesClick}
             data-testid="button-yes-i-do"
           >
-            Yes, I would
+            Pish, Yes!
           </Button>
           <div onClick={handleNoClick}>
             <DodgingButton>
-              No, I won't
+              Maybe, blehh no...
             </DodgingButton>
           </div>
         </div>
