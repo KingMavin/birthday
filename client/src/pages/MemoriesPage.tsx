@@ -23,7 +23,7 @@ const memories = [
   },
   {
     image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODhyYW5udGVodHo4aTZka2ljdTZ1YXI5YnZiNngwaTlleXdwMmZ4dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nRNF5nlDgr8bK/giphy.gif",
-    poem: "U fell, It wasn't one big moment, just quiet ones that built up,\nA laugh here, a gaze there...\nand suddenly, i was gone\nhopelessly, beautifully fallen and gone",
+    poem: "I fell, It wasn't one big moment, just quiet ones that built up,\nA laugh here, a gaze there...\nand suddenly, i was gone\nhopelessly, beautifully fallen and gone",
   },
   {
     image: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW80cTNzb3Y1cWUzdmIxMnRzMnA0eXEyZGd1b3l5c21zMjB5b2MyMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H0tF6mNgMxdMqUrOTA/giphy.gif",
